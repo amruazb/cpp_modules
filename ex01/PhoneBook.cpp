@@ -2,17 +2,17 @@
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 
-PhoneBook::PhoneBook() : cuurent_index(0), total_contacts(0) {}
+PhoneBook::PhoneBook() : current_index(0), total_contacts(0) {}
 
 void	PhoneBook::addContact()
 {
 	if (total_contacts < 8)
 		total_contacts++;
-	current_index = (current_indexx + 1) % 8;
+	current_index = (current_index + 1) % 8;
 	contacts[current_index].setDetails();
 }
 
-void	PhoneBook:searchContact()
+void	PhoneBook::searchContact()
 {
 	for (int i = 0; i < total_contacts; i++)
 		contacts[i].displaySummary(i);

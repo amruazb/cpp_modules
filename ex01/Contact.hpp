@@ -5,10 +5,15 @@
 
 class Contact {
 	public:
+		Contact();
 		void setDetails();
 		void displaySummary(int index) const;
-		void displayDetails() const;
+		void displayDetails()const;
 	private:
 		std::string first_name;
 		std::string last_name;
-		std::string 
+		std::string nickname;
+		std::string darkest_secret;
+};
+
+#endif
