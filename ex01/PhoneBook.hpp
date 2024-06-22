@@ -8,7 +8,6 @@
 class Contact{
 
     public:
-
         std::string     First_Name;
         std::string     Last_Name;
         std::string     Nickname;
@@ -23,6 +22,7 @@ class PhoneBook
 		int count;
 
 		PhoneBook();
+		~PhoneBook();
 		void addContact();
 		void searchContact();
 		std::string checklen(std::string data);
