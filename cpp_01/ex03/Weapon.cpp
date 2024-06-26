@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aabashee <aabashee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/26 13:35:50 by aabashee          #+#    #+#             */
-/*   Updated: 2024/06/26 13:35:53 by aabashee         ###   ########.fr       */
+/*   Created: 2024/06/26 13:39:49 by aabashee          #+#    #+#             */
+/*   Updated: 2024/06/26 13:39:51 by aabashee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Weapon.hpp"
 
-Zombie::Zombie(std::string name) : name(name) {}
-
-Zombie::~Zombie()
+Weapon::Weapon(std::string weaponType) :_type(weaponType)
 {
-	std::cout << name << " is destroyed." << std::endl;
+	return ;
 }
 
-void Zombie::announce(void)
+Weapon::~Weapon(void)
 {
-	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	return ;
 }
 
+std::string const Weapon::getType(void)
+{
+	return (this->_type);
+}
 
+void Weapon::setType(std::string weaponType)
+{
+	this->_type = weaponType;
+}

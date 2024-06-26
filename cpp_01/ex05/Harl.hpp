@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aabashee <aabashee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/26 13:35:50 by aabashee          #+#    #+#             */
-/*   Updated: 2024/06/26 13:35:53 by aabashee         ###   ########.fr       */
+/*   Created: 2024/06/26 13:40:46 by aabashee          #+#    #+#             */
+/*   Updated: 2024/06/26 13:40:48 by aabashee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HARL_HPP
+# define HARL_HPP
 
-Zombie::Zombie(std::string name) : name(name) {}
+#include <iostream>
+#include <string>
 
-Zombie::~Zombie()
+class Harl
 {
-	std::cout << name << " is destroyed." << std::endl;
-}
+private:
 
-void Zombie::announce(void)
-{
-	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
+	void debug( void );
+	void info( void );
+	void warning( void );
+	void error( void );
 
+public:
+	Harl();
+	~Harl();
 
+	void complain( std::string level );
+	void wrong(void);
+};
+
+#endif

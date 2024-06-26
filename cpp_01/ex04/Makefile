@@ -5,45 +5,28 @@
 #                                                     +:+ +:+         +:+      #
 #    By: aabashee <aabashee@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/06/26 13:36:40 by aabashee          #+#    #+#              #
-#    Updated: 2024/06/26 13:36:43 by aabashee         ###   ########.fr        #
+#    Created: 2024/06/26 13:40:31 by aabashee          #+#    #+#              #
+#    Updated: 2024/06/26 13:40:33 by aabashee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# Compiler
-CXX = c++
-
-# Compiler Flags
+NAME = sed
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CC = c++
+SRC = main.cpp
 
-# Output Executable Name
-NAME = zombie
 
-# Source Files
-SRC = main.cpp Zombie.cpp  zombieHorde.cpp
+OBJ = ${SRC:%.cpp=%.o}
 
-# Object Files
-OBJ = $(SRC:.cpp=.o)
+all: ${NAME}
 
-# All Target (default)
-all: $(NAME)
+${NAME}:${OBJ}
+		${CC} ${CXXFLAGS}  ${OBJ} -o $(NAME)
 
-# Link Object Files to Create Executable
-$(NAME): $(OBJ)
-	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
-
-# Compile Each Source File into an Object File
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
-
-# Clean Object Files
-clean:
-	rm -f $(OBJ)
-
-# Clean Object Files and Executable
 fclean: clean
-	rm -f $(NAME)
+		@rm -rf ${NAME}
 
-# Rebuild
+clean:
+		@rm -rf ${OBJ}
+
 re: fclean all
-
