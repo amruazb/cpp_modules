@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aabashee <aabashee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/29 19:42:22 by aabashee          #+#    #+#             */
-/*   Updated: 2024/06/29 19:42:24 by aabashee         ###   ########.fr       */
+/*   Created: 2024/06/29 19:48:41 by aabashee          #+#    #+#             */
+/*   Updated: 2024/06/29 19:48:43 by aabashee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#include "Point.hpp"
 
-#include<iostream>
-#include<string>
-
-class Fixed
+int main(void)
 {
-	private:
-		int value;
-		static const int fractionalBits = 8;
+	Point const a(2, 1);
+	Point const b(3, 4);
+	Point const c(5, 1);
+	Point const point(4,2);
 
-	public:
-		Fixed();
-		Fixed(const Fixed& other);
-		Fixed &operator=(const Fixed& other);
-		~Fixed();
 
-		int getRawBits(void) const;
-		void setRawBits(int const raw);
-};
+	bool result = bsp(a, b, c, point);
 
-#endif
+	if (result)
+		std::cout << "Point is inside the triangle" << std::endl;
+	else
+		std::cout << "Point is outside the triangle" << std::endl;
+
+	return (0);
+}
