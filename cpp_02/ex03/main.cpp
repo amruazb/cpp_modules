@@ -6,7 +6,7 @@
 /*   By: aabashee <aabashee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 19:48:41 by aabashee          #+#    #+#             */
-/*   Updated: 2024/06/29 19:48:43 by aabashee         ###   ########.fr       */
+/*   Updated: 2024/06/30 17:13:22 by aabashee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main(void)
 	Point const a(2, 1);
 	Point const b(3, 4);
 	Point const c(5, 1);
-	Point const point(4,2);
+	Point const point(400,2);
 
 
 	bool result = bsp(a, b, c, point);
